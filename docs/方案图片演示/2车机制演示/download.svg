@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1050" viewBox="0 0 1600 1050">
+<defs>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker>
+  <marker id="dimArrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto-start-reverse"><path d="M0,0 L8,4 L0,8 z" fill="#64748b"/></marker>
+  <style>
+    text{font-family:'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#0f172a}
+    .title{font-size:34px;font-weight:700}.subtitle{font-size:18px;fill:#475569}
+    .label{font-size:20px;font-weight:600}.small{font-size:16px;fill:#334155}.tiny{font-size:14px;fill:#475569}
+    .frame{fill:#f8fafc;stroke:#cbd5e1;stroke-width:2}.structure{fill:#dbeafe;stroke:#2563eb;stroke-width:4}
+    .link{fill:#bfdbfe;stroke:#1d4ed8;stroke-width:5}.servo{fill:#fde68a;stroke:#b45309;stroke-width:3}
+    .bearing{fill:#e2e8f0;stroke:#475569;stroke-width:3}.axis{fill:#ef4444;stroke:#991b1b;stroke-width:2}
+    .call{fill:none;stroke:#334155;stroke-width:2.5;marker-end:url(#arrow)}.motion{fill:none;stroke:#7c3aed;stroke-width:3;stroke-dasharray:10 8}
+    .dim{fill:none;stroke:#64748b;stroke-width:2;marker-start:url(#dimArrow);marker-end:url(#dimArrow)}
+  </style>
+</defs>
+<rect width="1600" height="1050" fill="#ffffff"/>
+<text x="70" y="65" class="title">三轴机械臂改进示意图</text>
+<text x="70" y="100" class="subtitle">概念方案｜依据实体验证反馈：肩肘减载、底座独立承重、位置舵机留足行程</text>
+<rect x="65" y="125" width="1015" height="835" rx="18" class="frame"/>
+<text x="95" y="165" class="label">侧视：肩部俯仰 + 肘部俯仰</text>
+<!-- ground / chassis -->
+<line x1="110" y1="850" x2="1040" y2="850" stroke="#94a3b8" stroke-width="3"/>
+<rect x="210" y="720" width="440" height="105" rx="12" fill="#cbd5e1" stroke="#475569" stroke-width="4"/>
+<rect x="250" y="825" width="90" height="42" rx="18" fill="#334155"/><rect x="525" y="825" width="90" height="42" rx="18" fill="#334155"/>
+<circle cx="295" cy="846" r="7" fill="#cbd5e1"/><circle cx="570" cy="846" r="7" fill="#cbd5e1"/>
+<text x="300" y="780" class="label">底盘上盖 / 固定底板</text>
+<!-- yaw bearing stack -->
+<rect x="330" y="673" width="200" height="22" rx="8" class="bearing"/>
+<rect x="340" y="647" width="180" height="22" rx="8" fill="#94a3b8" stroke="#334155" stroke-width="3"/>
+<rect x="375" y="600" width="110" height="47" rx="8" class="servo"/>
+<line x1="430" y1="588" x2="430" y2="710" stroke="#475569" stroke-width="4" stroke-dasharray="7 6"/>
+<circle cx="430" cy="660" r="9" class="axis"/>
+<text x="495" y="626" class="small">A1 底座回转舵机</text>
+<text x="495" y="648" class="tiny">定位型；齿轮/同步带驱动转盘</text>
+<path d="M485 632 L490 632" class="call"/>
+<text x="548" y="689" class="small">独立轴承支撑整臂重量</text>
+<path d="M540 681 L520 681" class="call"/>
+<text x="452" y="707" class="tiny">中心轴与保持间隙</text>
+<!-- shoulder tower -->
+<path d="M375 600 L375 493 L485 493 L485 600" class="structure"/>
+<path d="M375 493 L430 448 L485 493" fill="#dbeafe" stroke="#2563eb" stroke-width="4"/>
+<circle cx="430" cy="493" r="18" class="axis"/>
+<rect x="352" y="453" width="53" height="30" rx="6" class="servo"/>
+<text x="100" y="445" class="small">A2 肩部舵机</text>
+<text x="100" y="468" class="tiny">位置控制 180°；双侧支撑肩轴</text>
+<path d="M278 463 L344 468" class="call"/>
+<!-- link 1 and forearm -->
+<path d="M430 493 L640 400 L655 435 L445 528 Z" class="link"/>
+<circle cx="648" cy="417" r="18" class="axis"/>
+<rect x="626" y="370" width="55" height="31" rx="6" class="servo"/>
+<text x="688" y="361" class="small">A3 肘部舵机</text>
+<text x="688" y="384" class="tiny">保留约 169°路线：优先 270°定位型</text>
+<path d="M686 390 L675 390" class="call"/>
+<!-- forearm to claw -->
+<path d="M648 417 L850 315 L866 347 L664 449 Z" class="link"/>
+<line x1="657" y1="417" x2="657" y2="417"/>
+<!-- dual side plate hint -->
+<path d="M437 540 L640 449" fill="none" stroke="#60a5fa" stroke-width="8"/>
+<text x="510" y="565" class="tiny">双侧连杆 / 箱形轻量前臂</text>
+<path d="M621 548 L610 470" class="call"/>
+<!-- gripper -->
+<circle cx="858" cy="331" r="12" fill="#16a34a" stroke="#166534" stroke-width="3"/>
+<path d="M858 331 L916 302 L947 316 L901 339 Z" fill="#bbf7d0" stroke="#15803d" stroke-width="4"/>
+<path d="M858 331 L906 362 L940 350 L901 334 Z" fill="#bbf7d0" stroke="#15803d" stroke-width="4"/>
+<rect x="923" y="319" width="28" height="26" rx="3" fill="#facc15" stroke="#854d0e" stroke-width="2"/>
+<text x="894" y="269" class="small">夹爪固定在末端</text>
+<text x="894" y="289" class="tiny">单独夹爪舵机；按夹爪连杆确定行程</text>
+<path d="M960 294 L944 313" class="call"/>
+<!-- motion arcs -->
+<path d="M430 493 A130 130 0 0 1 532 366" class="motion"/>
+<path d="M648 417 A94 94 0 0 1 752 384" class="motion"/>
+<text x="275" y="344" class="small" fill="#7c3aed">肩约 107°路径跨度</text>
+<text x="677" y="495" class="small" fill="#7c3aed">肘相对转角约 169°</text>
+<!-- center of mass / reduce distal mass -->
+<circle cx="747" cy="365" r="9" fill="#f97316"/>
+<text x="690" y="530" class="tiny">尽量减轻远端活动质量</text>
+<!-- base yaw annotation and dimensions -->
+<path d="M329 633 A113 113 0 0 0 531 633" class="motion"/>
+<text x="273" y="600" class="small" fill="#7c3aed">底座约 157°；避开硬限位</text>
+<line x1="430" y1="690" x2="430" y2="725" stroke="#64748b" stroke-width="2"/>
+<!-- side view note -->
+<rect x="105" y="890" width="935" height="42" rx="8" fill="#fff7ed" stroke="#fb923c" stroke-width="2"/>
+<text x="122" y="918" class="small">关键：舵机输出轴传扭矩；轴承承受盘面轴向载荷。图中连杆、舵机尺寸和角度均为示意。</text>
+<!-- right panel -->
+<rect x="1110" y="125" width="425" height="835" rx="18" class="frame"/>
+<text x="1140" y="165" class="label">俯视：底座回转支撑</text>
+<circle cx="1318" cy="370" r="140" fill="#dbeafe" stroke="#2563eb" stroke-width="5"/>
+<circle cx="1318" cy="370" r="101" fill="#e2e8f0" stroke="#475569" stroke-width="8"/>
+<circle cx="1318" cy="370" r="36" fill="#f8fafc" stroke="#475569" stroke-width="4"/>
+<circle cx="1318" cy="370" r="12" class="axis"/>
+<path d="M1318 370 L1437 300" stroke="#2563eb" stroke-width="16" stroke-linecap="round"/>
+<rect x="1165" y="535" width="86" height="50" rx="9" class="servo"/>
+<circle cx="1250" cy="560" r="13" fill="#b45309"/>
+<path d="M1250 560 C1285 560 1290 500 1323 500 C1355 500 1360 560 1400 560" fill="none" stroke="#b45309" stroke-width="7"/>
+<text x="1165" y="620" class="small">同步带 / 齿轮驱动</text>
+<text x="1165" y="644" class="tiny">避免把机械臂重量压在舵机花键上</text>
+<path d="M1285 625 L1318 580" class="call"/>
+<text x="1192" y="390" class="small">中心轴承</text>
+<text x="1192" y="414" class="tiny">承担轴向/径向载荷</text>
+<path d="M1280 410 L1300 400" class="call"/>
+<text x="1365" y="245" class="small">回转盘</text>
+<text x="1365" y="269" class="tiny">与固定底板留出间隙</text>
+<path d="M1405 276 L1378 303" class="call"/>
+<!-- recommendation box -->
+<rect x="1140" y="705" width="365" height="210" rx="12" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+<text x="1160" y="744" class="label">改进重点</text>
+<text x="1160" y="780" class="small">1. 肩、肘按实测负载选扭矩</text>
+<text x="1160" y="814" class="small">2. 肘舵机靠近肩轴，减小远端质量</text>
+<text x="1160" y="848" class="small">3. 转盘加轴承，排除擦碰与偏心</text>
+<text x="1160" y="882" class="small">4. 量实物有效行程并留端点余量</text>
+<text x="70" y="1005" class="tiny">不是 Fusion 原生模型，也不是加工图。依据：已保存路径角度跨度；最终尺寸、扭矩、安装孔和供电仍需实测后定版。</text>
+</svg>
